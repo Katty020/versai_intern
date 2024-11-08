@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReviewSection from './components/ReviewSection';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex flex-col">
+      <div className="top-section flex items-center justify-center text-white py-16">
+        <div className="text-center max-w-4xl px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8">
+            Reviews of Our <br />Services
+          </h1>
+          <p className="text-base md:text-lg mb-12">
+            Our clients are at the center of everything we do. We consider each 
+            project not just a construction endeavor, but a collaborative 
+            journey with you.
+          </p>
+        </div>
+      </div>
+      <ReviewSection />
     </div>
   );
-}
+};
 
 export default App;
