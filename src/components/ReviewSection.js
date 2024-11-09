@@ -4,7 +4,6 @@ import { reviews } from "../data/reviewsData";
 const StarRating = ({ rating }) => {
   return (
     <div className="absolute top-[20px] left-2 ml-2 mt-2 text-[#293339] mb-6">
-      {/* Increased bottom margin to mb-6 */}
       {[...Array(5)].map((_, index) => (
         <i
           key={index}
@@ -20,7 +19,6 @@ const StarRating = ({ rating }) => {
 const ReviewCard = ({ name, role, quote, avatar, rating }) => {
   return (
     <div className="bg-[#f6f7f7] text-gray-800 p-6 rounded-lg border-b-gray-100 relative min-h-[280px] max-w-2xl mx-auto">
-      {/* Added 5 stars at the top of the card */}
       <div className="absolute top-[20px] left-2 ml-2 mt-2 text-[#293339] mb-6">
         {[...Array(5)].map((_, index) => (
           <i
@@ -32,17 +30,16 @@ const ReviewCard = ({ name, role, quote, avatar, rating }) => {
         ))}
       </div>
 
-      {/* Dynamic star rating */}
+      
       <StarRating rating={rating} />
 
       <div className="flex-grow mt-10">
-        {/* Increased top margin to mt-10 to add more space between stars and quote */}
+        
         <blockquote className="italic text-gray-700 leading-relaxed">
           {quote}
         </blockquote>
       </div>
       <div className="flex items-center mt-6">
-        {/* Increased top margin to mt-6 to add space between quote and reviewer info */}
         <img
           src={avatar}
           alt={name}
@@ -61,7 +58,6 @@ const ReviewSection = () => {
   return (
     <div className="bottom-section bg-white">
       <div className="container mx-auto px-4 py-16">
-        {/* Responsive grid layout: 1 column on mobile, 2 columns on medium screens and above */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           {reviews.map((review) => (
             <ReviewCard
