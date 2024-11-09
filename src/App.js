@@ -29,7 +29,9 @@ const App = () => {
         <div className="absolute top-0 bottom-0 right-108 transform -translate-x-1/2 border-l-[2px] border-gray-300 opacity-15"></div>
       </div>
 
-      <ReviewSection />
+      <div className="mt-[-130px]"> {/* Adjust the negative margin as needed */}
+        <ReviewSection />
+      </div>
     </div>
   );
 };
