@@ -4,7 +4,6 @@ import { reviews } from "../data/reviewsData";
 const StarRating = ({ rating }) => {
   return (
     <div className="absolute top-[20px] left-2 ml-2 mt-2 text-[#293339] mb-4">
-      {" "}
       {/* Increased bottom margin */}
       {[...Array(5)].map((_, index) => (
         <i
@@ -23,8 +22,6 @@ const ReviewCard = ({ name, role, quote, avatar, rating }) => {
     <div className="bg-[#f6f7f7] text-gray-800 p-6 rounded-lg border-b-gray-100 relative min-h-[260px] max-w-2xl mx-auto">
       {/* Added 5 stars at the top of the card */}
       <div className="absolute top-[20px] left-2 ml-2 mt-2 text-[#293339] mb-4">
-        {" "}
-        {/* Increased bottom margin */}
         {[...Array(5)].map((_, index) => (
           <i
             key={index}
@@ -39,9 +36,6 @@ const ReviewCard = ({ name, role, quote, avatar, rating }) => {
       <StarRating rating={rating} />
 
       <div className="flex-grow mt-6">
-        {" "}
-        {/* Added margin-top to move content down */}
-        <br />
         <blockquote className="italic text-gray-700 leading-relaxed">
           {quote}
         </blockquote>
@@ -65,8 +59,8 @@ const ReviewSection = () => {
   return (
     <div className="bottom-section bg-white">
       <div className="container mx-auto px-4 py-16">
-        {/* Updated to grid-cols-2 for 2 cards per row */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Responsive grid layout: 1 column on mobile, 2 columns on medium screens and above */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           {reviews.map((review) => (
             <ReviewCard
               key={review.id}
